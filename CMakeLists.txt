@@ -1,6 +1,10 @@
+include(qnx.cmake)
+
 project(taglib)
 
 cmake_minimum_required(VERSION 2.6.0 FATAL_ERROR)
+
+include(qnx.cmake)
 
 option(ENABLE_STATIC "Make static version of libtag"  OFF)
 if(ENABLE_STATIC)

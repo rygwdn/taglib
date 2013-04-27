@@ -284,7 +284,7 @@ const APE::ItemListMap& APE::Tag::itemListMap() const
 
 void APE::Tag::removeItem(const String &key)
 {
-  Map<const String, Item>::Iterator it = d->itemListMap.find(key.upper());
+  Map<String, Item>::Iterator it = d->itemListMap.find(key.upper());
   if(it != d->itemListMap.end())
     d->itemListMap.erase(it);
 }
@@ -351,7 +351,7 @@ ByteVector APE::Tag::render() const
   uint itemCount = 0;
 
   {
-    for(Map<const String, Item>::ConstIterator it = d->itemListMap.begin();
+    for(Map<String, Item>::ConstIterator it = d->itemListMap.begin();
         it != d->itemListMap.end(); ++it)
     {
       data.append(it->second.render());
